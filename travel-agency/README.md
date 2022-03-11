@@ -12,7 +12,7 @@ To send an event like the following:
   "time":"2022-01-06T15:35:29.967831-03:00",
   "kogitoprocrefid":"f9a75f77-7269-4b18-93cd-2955e3406cd4",
   "data":{
-    "move":"This has been injected by the event"
+    "move":"Hello Serverless Workflow"
   }
 }
 ````

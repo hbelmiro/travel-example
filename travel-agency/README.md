@@ -1,5 +1,30 @@
 # travel-agency Project
 
+This project consumes Cloud Events through HTTP.
+
+To send an event like the following:
+
+````json
+{
+  "specversion":"1.0",
+  "source":"",
+  "type":"move",
+  "time":"2022-01-06T15:35:29.967831-03:00",
+  "kogitoprocrefid":"f9a75f77-7269-4b18-93cd-2955e3406cd4",
+  "data":{
+    "move":"This has been injected by the event"
+  }
+}
+````
+
+Use the following command:
+
+````bash
+curl -X POST -H 'Content-Type:application/json' -H 'Accept:application/json' -d '{"specversion":"1.0","id":"e4604756-f58e-440e-9619-484b92408308","source":"","type":"move","time":"2022-01-06T15:35:29.967831-03:00","kogitoprocrefid":"f9a75f77-7269-4b18-93cd-2955e3406cd4","data":{"move":"Hello Serverless Workflow"}}' http://localhost:8080/
+````
+
+--------
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .

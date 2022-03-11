@@ -1,0 +1,47 @@
+{
+  "id": "waitForEvent",
+  "version": "1.0",
+  "name": "Wait for Event workflow",
+  "expressionLang": "jsonpath",
+  "description": "Workflow that waits for an event to be published",
+  "start": "waitForEvent",
+  "events": [
+    {
+      "name": "moveEvent",
+      "source": "",
+      "type": "move"
+    }
+  ],
+  "functions": [
+    {
+      "name": "printMessage",
+      "type": "custom",
+      "operation": "sysout"
+    }
+  ],
+  "states": [
+    {
+      "name": "waitForEvent",
+      "type": "event",
+      "onEvents": [
+        {
+          "eventRefs": [
+            "moveEvent"
+          ],
+          "actions": [
+            {
+              "name": "printAfterEvent",
+              "functionRef": {
+                "refName": "printMessage",
+                "arguments": {
+                  "message": "$[*]"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "end": true
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 package com.thegreatapi.travelexample.travelagency;
 
-public class Travel {
+final class Travel {
 
+    private String id;
     private String destination;
     private String departureDate;
     private String returnDate;
